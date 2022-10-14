@@ -10,7 +10,6 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 `
 
-
 const MudaHeader = styled.header`
   background-color: orange;
   display: flex;
