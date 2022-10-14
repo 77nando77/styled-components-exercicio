@@ -1,6 +1,33 @@
 import React from "react";
-import CardVideo from "./Componentes/CardVideo";
+import CardVideo from "./Componentes/CardVideo/CardVideo";
 import "./styles.css";
+import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+`
+
+
+const MudaHeader = styled.header`
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  height: 10%;
+`
+const MudaMain = styled.main`
+  min-height: 80%;
+  display: flex;
+`
+const MudaNav = styled.nav`
+  flex-basis: 200px;
+  border-right-style: solid;
+  border-right-width: thin;
+`
 
 export default function App() {
   const card1 = {
@@ -10,15 +37,16 @@ export default function App() {
   };
 
   return (
-    <div>
+    <>
+      <GlobalStyle />
       <div className="tela-inteira">
-        <header>
+        <MudaHeader>
           <h1>LabeTube</h1>
           <input type="text" placeholder="Busca" id="campoDeBusca" />
-        </header>
+        </MudaHeader>
 
-        <main>
-          <nav className="menu-vertical">
+        <MudaMain>
+          <MudaNav>
             <ul>
               <li className="botoes-meunu-vertical">Início</li>
               <li className="botoes-meunu-vertical">Em alta</li>
@@ -27,7 +55,7 @@ export default function App() {
               <li className="botoes-meunu-vertical">Originais</li>
               <li className="botoes-meunu-vertical">Histórico</li>
             </ul>
-          </nav>
+          </MudaNav>
 
           <section className="painel-de-videos">
             <CardVideo
@@ -36,12 +64,12 @@ export default function App() {
               textoAlternativo={card1.textoAlternativo}
             />
           </section>
-        </main>
+        </MudaMain>
 
         <footer>
           <h4>Oi! Eu moro no footer!</h4>
         </footer>
       </div>
-    </div>
+    </>
   );
 }
