@@ -1,14 +1,11 @@
 import React from "react";
 import CardVideo from "./Componentes/CardVideo/CardVideo";
 import "./styles.css";
-import { createGlobalStyle } from "styled-components";
+// import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-`
+// const GlobalStyle = createGlobalStyle``
+  
 
 const MudaHeader = styled.header`
   background-color: orange;
@@ -37,7 +34,7 @@ export default function App() {
 
   return (
     <>
-      <GlobalStyle />
+      {/* <GlobalStyle /> */}
       <div className="tela-inteira">
         <MudaHeader>
           <h1>LabeTube</h1>
